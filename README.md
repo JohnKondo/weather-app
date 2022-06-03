@@ -17,7 +17,7 @@ Sujet ->  [Cahier des charges](/cahier_charges.pdf)
 
 Application météo écrite en java. <br>
 
-[In app screenshot](https://github.com/JohnKondo/weather-app/blob/master/Screenshot_Weather-App.png)
+![In app screenshot](https://github.com/JohnKondo/weather-app/blob/master/Screenshot_Weather-App.png)
 
 ## Application graphique
 
