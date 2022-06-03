@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
+            prefWidth="1000.0" stylesheets="@../../../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.appmeteo.views.View">
+    <Line endX="1000.0" endY="305.0" startX="746.0" startY="304.0"/>
+    <AnchorPane fx:id="anchorMap" layoutX="752.0" layoutY="89.0" prefHeight="221.0" prefWidth="254.0"
+                AnchorPane.bottomAnchor="446.0" AnchorPane.rightAnchor="0.0">
+        <padding>
+            <Insets bottom="1.0" left="1.0" right="1.0" top="1.0"/>
+        </padding>
+        <WebView fx:id="map" layoutX="8.0" layoutY="8.0" prefHeight="221.0" prefWidth="254.0"
+                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="0.0"/>
+        <Pane prefHeight="221.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+    </AnchorPane>
+    <AnchorPane fx:id="anchorMapStandby" maxHeight="221.0" maxWidth="254.0" minHeight="221.0" minWidth="254.0"
+                prefHeight="221.0" prefWidth="254.0" AnchorPane.bottomAnchor="446.0" AnchorPane.rightAnchor="0.0">
+        <fx:include fx:id="mapStandby" source="mapStandby.fxml" AnchorPane.bottomAnchor="0"
+                    AnchorPane.leftAnchor="0"/>
+    </AnchorPane>
+    <AnchorPane fx:id="anchorForecastFiveDays" prefHeight="443.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"/>
+    <AnchorPane fx:id="anchorHeader" minHeight="0.0" minWidth="0.0" prefHeight="84.0" prefWidth="1000.0"
+                AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <Pane fx:id="dragPane" prefHeight="47.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+
+        <HBox alignment="CENTER" layoutX="306.0" layoutY="19.0" prefHeight="47.0" prefWidth="389.0"
+              styleClass="search-box" stylesheets="@../../../css/stylesheet.css">
+            <padding>
+                <Insets left="10.0" right="10.0"/>
+            </padding>
+            <TextField fx:id="searchInput" onAction="#search" prefHeight="47.0" prefWidth="276.0"
+                       promptText="Entrez le nom de la ville." styleClass="transparent"
+                       stylesheets="@../../../css/stylesheet.css"/>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="32.0"
+                    prefWidth="115.0" styleClass="search-button" stylesheets="@../../../css/stylesheet.css"
+                    text="Rechercher">
+            </Button>
+        </HBox>
+        <Button fx:id="closeApp" layoutX="938.0" layoutY="33.0" maxHeight="20.0" maxWidth="20.0" minHeight="20.0"
+                minWidth="20.0" mnemonicParsing="false" onAction="#close" prefHeight="20.0" prefWidth="20.0"
+                styleClass="close-app" stylesheets="@../../../css/stylesheet.css" text="x">
+            <font>
+                <Font size="8.0"/>
+            </font>
+        </Button>
+        <Button fx:id="reduceApp" layoutX="892.0" layoutY="39.0" maxHeight="20.0" maxWidth="20.0" minHeight="20.0"
+                minWidth="20.0" mnemonicParsing="false" onAction="#reduce" prefHeight="20.0" prefWidth="20.0"
+                styleClass="reduce-app" stylesheets="@../../../css/stylesheet.css" text="x" textFill="WHITE">
+            <font>
+                <Font size="8.0"/>
+            </font>
+        </Button>
+    </AnchorPane>
+    <fx:include fx:id="searchResultError" source="currentWeatherErrorView.fxml" AnchorPane.bottomAnchor="200.0"
+                AnchorPane.leftAnchor="158.0"/>
+    <fx:include fx:id="searchResult" source="searchResult.fxml" AnchorPane.bottomAnchor="195.0"
+                AnchorPane.leftAnchor="161.0"/>
+    <fx:include fx:id="homePage" source="homepage.fxml" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="158.0"/>
+    <fx:include fx:id="forecastFiveDays" source="forecastFiveDays.fxml" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"/>
+    <fx:include fx:id="forecastFiveDaysStandby" source="forecastFiveDaysStandby.fxml" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"/>
+
+
+    <AnchorPane fx:id="anchorHourly" prefHeight="196.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.rightAnchor="254.0">
+        <TabPane fx:id="tabPane" layoutX="-7.0" layoutY="54.0" prefHeight="196.0" prefWidth="586.0" side="BOTTOM"
+                 styleClass="root" stylesheets="@../../../css/stylesheet.css" tabClosingPolicy="UNAVAILABLE"
+                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="0.0">
+            <Tab fx:id="hourlyWeather" text="Météo heure par heure">
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <fx:include fx:id="forecastHourly" source="forecastHourly.fxml"
+                                AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+                    <fx:include fx:id="forecastHourlyStandby" source="forecastHourlyStandby.fxml"
+                                AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="history" text="Courbe de la température">
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                    <fx:include fx:id="tempGraph" source="tempGraph.fxml"/>
+                    <fx:include fx:id="tempGraphStandby" source="tempGraphStandby.fxml"/>
+                </AnchorPane>
+            </Tab>
+            <Tab fx:id="about" text="À Propos">
+                <AnchorPane maxHeight="168.0" maxWidth="588.0" minHeight="168.0" minWidth="588.0"
+                            prefHeight="168.0" prefWidth="588.0">
+                    <Text fill="#c6c6c6" layoutX="12.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          styleClass="font-light"
+                          text="Icones réalisés par Freepik et Vectors Market (flaticon.com)">
+                        <font>
+                            <Font size="13.0"/>
+                        </font>
+                    </Text>
+                    <Text fill="WHITE" layoutX="14.0" layoutY="31.0" lineSpacing="2.0" strokeType="OUTSIDE"
+                          strokeWidth="0.0" styleClass="font-light"
+                          text="Réalisé par Tom Ami, John Kondozopulos Thomas Nanecou, Paul Alligier. "
+                          wrappingWidth="557.0">
+                        <font>
+                            <Font size="18.0"/>
+                        </font>
+                    </Text>
+                    <Text fill="WHITE" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          styleClass="font-light"
+                          text="Dans le cadre de l'Unité d'Enseignement Projet: Introduction au Génie Logiciel durant l'année 2021."
+                          wrappingWidth="559.48486328125"/>
+                    <Text fill="#c6c6c6" layoutX="12.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                          styleClass="font-light"
+                          text="La police utilisée est Open-Sans, distribuée par Google Fonts."/>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+    </AnchorPane>
+    <AnchorPane fx:id="anchorFavorite" prefHeight="667.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0">
+        <fx:include source="Favourites.fxml"/>
+    </AnchorPane>
+    <Line endX="160.0" endY="751.0" startX="160.0" startY="84.29296875"/>
+    <Line endX="1001.2929077148438" endY="83.0" startY="83.0"/>
+    <Line endX="746.0" endY="750.0" startX="746.0" startY="82.5"/>
+    <Line endX="1331.5" endY="217.5" layoutX="-586.0" layoutY="336.0" startX="746.5" startY="217.5"/>
+</AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="667.0" prefWidth="160.0" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.appmeteo.views.FavoritesView">
+    <VBox fx:id="favouritesVbox" layoutX="23.0" layoutY="35.0" prefHeight="600.0" prefWidth="160.0"
+          AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0"></VBox>
+    <Pane layoutY="600.0" prefHeight="67.0" prefWidth="160.0">
+        <Label fx:id="favouriteCounter" alignment="CENTER" contentDisplay="CENTER" layoutY="26.0" prefHeight="16.0"
+               prefWidth="160.0" text="TEST"/>
+    </Pane>
+
+</AnchorPane>

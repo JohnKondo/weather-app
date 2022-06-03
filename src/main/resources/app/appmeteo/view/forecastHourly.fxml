@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="168.0" maxWidth="588.0" minHeight="168.0" minWidth="588.0" prefHeight="168.0" prefWidth="588.0" stylesheets="@../../../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.appmeteo.views.HourlyWeatherView">
+
+    <ImageView fx:id="weatherIcon" fitHeight="50.0" fitWidth="50.0" layoutX="77.0" layoutY="38.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../../../icons/night/clear.png"/>
+    </ImageView>
+   <Label fx:id="temp" layoutX="137.0" layoutY="32.0" prefHeight="59.0" prefWidth="107.0" styleClass="font_Hourly-temp" stylesheets="@../../../css/stylesheet.css" text="20°" />
+   <Label fx:id="windVelocity" layoutX="250.0" layoutY="75.0" styleClass="font-description" stylesheets="@../../../css/stylesheet.css" text="Vent : 20km/h" />
+   <Label fx:id="cloudCover" layoutX="249.0" layoutY="33.0" styleClass="font-description" stylesheets="@../../../css/stylesheet.css" text="Couverture nuageuse : 30%" />
+   <Pane fx:id="pane" layoutY="4.0" prefHeight="168.0" prefWidth="588.0" />
+   <Line endX="30.0" endY="-67.0" layoutX="210.0" layoutY="102.0" startX="30.0" startY="-9.0" stroke="WHITE" styleClass="font-fifteen" />
+   <Label fx:id="precipitation" layoutX="249.0" layoutY="54.0" styleClass="font-description" stylesheets="@../../../css/stylesheet.css" text="Précipitation : 40%" />
+</AnchorPane>

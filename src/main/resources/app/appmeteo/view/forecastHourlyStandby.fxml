@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="168.0" maxWidth="588.0" minHeight="168.0" minWidth="588.0" prefHeight="168.0" prefWidth="588.0"
+            stylesheets="@../../../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <Text fill="WHITE" layoutX="3.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="font-header"/>
+</AnchorPane>

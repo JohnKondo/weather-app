@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="460.0" maxWidth="583.0" minHeight="460.0" minWidth="583.0" prefHeight="460.0" prefWidth="583.0"
+            stylesheets="@../../../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <Text fill="WHITE" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur {Weather-App}"
+          textAlignment="CENTER" wrappingWidth="583.0">
+        <font>
+          <Font size="33.0"/>
+        </font>
+    </Text>
+    <Text fill="#d3d3d3" layoutX="-6.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Renseignez la ville dans la barre de recherche" textAlignment="CENTER" wrappingWidth="583.0">
+        <font>
+          <Font size="15.0"/>
+        </font>
+    </Text>
+    <Text fill="WHITE" layoutX="430.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© Gated Inc."
+          textAlignment="RIGHT" wrappingWidth="145.2734375"/>
+    <Text fill="WHITE" layoutX="302.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Powered by OpenWeatherMap©" textAlignment="RIGHT" wrappingWidth="274.2734375">
+        <font>
+          <Font size="10.0"/>
+        </font>
+    </Text>
+</AnchorPane>

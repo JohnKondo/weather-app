@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="443.0" minWidth="254.0" prefHeight="443.0" prefWidth="254.0"
+            stylesheets="@../../../css/stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.appmeteo.views.WeatherOn5daysView">
+    <Text fill="WHITE" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MÉTÉO SUR 5 JOURS"
+          textAlignment="CENTER" wrappingWidth="254.0">
+        <font>
+          <Font size="20.0"/>
+        </font>
+    </Text>
+    <Line endX="45.0" layoutX="163.0" layoutY="40.0" startX="-119.0" stroke="#8d8d8d" AnchorPane.topAnchor="40.0"/>
+    <AnchorPane layoutY="40.0" prefHeight="80.0" prefWidth="254.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+        <ImageView fx:id="first_icon" fitHeight="30.0" fitWidth="30.0" layoutX="115.0" layoutY="28.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label fx:id="first_day" layoutX="25.0" layoutY="32.0" prefHeight="21.0" prefWidth="105.0"
+               styleClass="font-fifteen" text="DIMANCHE"/>
+        <Label fx:id="first_max" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="32.0" prefHeight="21.0"
+               prefWidth="40.0" styleClass="font-fifteen" text="-20°"/>
+        <Label fx:id="first_min" layoutX="215.0" layoutY="32.0" prefHeight="21.0" prefWidth="40.0"
+               styleClass="font-light" text="-20°" textFill="#a4a4a4"/>
+    </AnchorPane>
+    <Line endX="45.0" layoutX="163.0" layoutY="120.0" startX="-119.0" stroke="#8d8d8d"/>
+    <AnchorPane layoutY="120.0" prefHeight="80.0" prefWidth="254.0">
+        <ImageView fx:id="second_icon" fitHeight="30.0" fitWidth="30.0" layoutX="115.0" layoutY="25.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label fx:id="second_day" layoutX="25.0" layoutY="32.0" prefHeight="21.0" prefWidth="105.0"
+               styleClass="font-fifteen" text="DIMANCHE"/>
+        <Label fx:id="second_max" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="32.0" prefHeight="21.0"
+               prefWidth="40.0" styleClass="font-fifteen" text="-20°"/>
+        <Label fx:id="second_min" layoutX="215.0" layoutY="32.0" prefHeight="21.0" prefWidth="40.0"
+               styleClass="font-light" text="-20°" textFill="#a4a4a4"/>
+    </AnchorPane>
+    <AnchorPane layoutY="200.0" prefHeight="80.0" prefWidth="254.0">
+        <ImageView fx:id="third_icon" fitHeight="30.0" fitWidth="30.0" layoutX="115.0" layoutY="25.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label fx:id="third_day" layoutX="25.0" layoutY="32.0" prefHeight="21.0" prefWidth="105.0"
+               styleClass="font-fifteen" text="DIMANCHE"/>
+        <Label fx:id="third_max" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="32.0" prefHeight="21.0"
+               prefWidth="40.0" styleClass="font-fifteen" text="-20°"/>
+        <Label fx:id="third_min" layoutX="215.0" layoutY="32.0" prefHeight="21.0" prefWidth="40.0"
+               styleClass="font-light" text="-20°" textFill="#a4a4a4"/>
+    </AnchorPane>
+    <AnchorPane layoutY="280.0" prefHeight="80.0" prefWidth="254.0">
+        <ImageView fx:id="fourth_icon" fitHeight="30.0" fitWidth="30.0" layoutX="115.0" layoutY="25.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label fx:id="fourth_day" layoutX="25.0" layoutY="32.0" prefHeight="21.0" prefWidth="105.0"
+               styleClass="font-fifteen" text="DIMANCHE"/>
+        <Label fx:id="fourth_max" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="32.0" prefHeight="21.0"
+               prefWidth="40.0" styleClass="font-fifteen" text="-20°"/>
+        <Label fx:id="fourth_min" layoutX="215.0" layoutY="32.0" prefHeight="21.0" prefWidth="40.0"
+               styleClass="font-light" text="-20°" textFill="#a4a4a4"/>
+    </AnchorPane>
+    <AnchorPane layoutY="360.0" prefHeight="80.0" prefWidth="254.0">
+        <ImageView fx:id="fifth_icon" fitHeight="30.0" fitWidth="30.0" layoutX="115.0" layoutY="25.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <Label fx:id="fifth_day" layoutX="25.0" layoutY="32.0" prefHeight="21.0" prefWidth="105.0"
+               styleClass="font-fifteen" text="DIMANCHE"/>
+        <Label fx:id="fifth_max" alignment="CENTER_RIGHT" layoutX="165.0" layoutY="32.0" prefHeight="21.0"
+               prefWidth="40.0" styleClass="font-fifteen" text="-20°"/>
+        <Label fx:id="fifth_min" layoutX="215.0" layoutY="32.0" prefHeight="21.0" prefWidth="40.0"
+               styleClass="font-light" text="-20°" textFill="#a4a4a4"/>
+    </AnchorPane>
+    <Line endX="45.0" layoutX="163.0" layoutY="200.0" startX="-119.0" stroke="#8d8d8d"/>
+    <Line endX="45.0" layoutX="163.0" layoutY="280.0" startX="-119.0" stroke="#8d8d8d"/>
+    <Line endX="45.0" layoutX="163.0" layoutY="360.0" startX="-119.0" stroke="#8d8d8d"/>
+</AnchorPane>

@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+version = '0.0.0'
+sourceCompatibility = 11
+targetCompatibility = 11
+
+test {
+    useJUnitPlatform()
+    minHeapSize = "128m"
+    maxHeapSize = "1024m"
+
+    // Headless test execution (true by default)
+    if (project.hasProperty("headless") ? project.headless : true) {
+        jvmArgs "-Dtestfx.robot=glass"
+        jvmArgs "-Dtestfx.headless=true"
+        jvmArgs "-Dprism.order=sw"
+        jvmArgs "-Dprism.text=t2k"
+    }
+
+    beforeTest {
+        descriptor -> logger.lifecycle("Running test: " + descriptor)
+    }
+}
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web']
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+
+    implementation "com.github.penemue:keap:0.3.0"
+    implementation 'org.kordamp.ikonli:ikonli-javafx:11.1.0'
+    implementation 'org.kordamp.ikonli:ikonli-fontawesome5-pack:11.1.0'
+    implementation 'org.kordamp.ikonli:ikonli-material-pack:11.1.0'
+    implementation 'org.codehaus.griffon:griffon-javafx:2.15.1'
+    implementation 'org.controlsfx:controlsfx:11.0.0-RC2'
+
+    //json parser
+    implementation name:'java-json'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.4.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.4.0"
+
+    testImplementation "org.testfx:testfx-junit5:4.0.15-alpha"
+    testRuntimeOnly "org.testfx:openjfx-monocle:jdk-11+26"
+}
+
+
+
+task(runCLI, dependsOn: 'classes', type: JavaExec) {
+    main = 'app.appmeteo.WeatherApp_CLI'
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    args "list"
+    args "today"
+}
+
+application {
+    mainClassName = 'app.appmeteo.WeatherApp'
+    applicationDefaultJvmArgs = [
+            '--add-opens=javafx.base/com.sun.javafx.event=ALL-UNNAMED'
+    ]
+}
+
+javadoc {
+    options.with {
+        links 'https://docs.oracle.com/en/java/javase/11/docs/api/'
+    }
+}
